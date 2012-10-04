@@ -31,10 +31,12 @@ class Table extends HtmlTag{
     }
         
     public function extrairHtml(){
-        $html = "<table".$this->extrairClasses().">".PHP_EOL;
+        
+//$html = "<table".$this->extrairAtributosBasicos().$this->extrair">".PHP_EOL;
+        $html = $this->extrairAberturaTag().PHP_EOL;
         $html.= "   ".$this->thead->extrairHtml();
         $html.= "   ".$this->tbody->extrairHtml();              
-        $html.= "</table>".PHP_EOL;        
+        $html.= $this->extrairFechamentoTag().PHP_EOL;        
         return $html;
     }
     
